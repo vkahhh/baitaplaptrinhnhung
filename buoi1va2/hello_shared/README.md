@@ -7,7 +7,7 @@ Directory structure:
 
 Following the instruction below to building static lib:
 - step1:  make all	To build all object files.
-- step2:  make static	To build static lib.
+- step2:  build shared lib.
 - step3:  make link	To link and build excutable file.
 - step4:  make clean	Clean everything.
 
