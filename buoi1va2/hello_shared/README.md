@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Directory structure:
 - bin: Directory for the excutable file.
 - obj: Directory for the object files.
@@ -8,11 +7,8 @@ Directory structure:
 
 Following the instruction below to building static lib:
 - step1:  make all	To build all object files.
-- step2:  make static	To build static lib.
+- step2:  build shared lib.
 - step3:  make link	To link and build excutable file.
 - step4:  make clean	Clean everything.
 
 
-=======
-#static lib
->>>>>>> f3cbba01cdb39ab4ebe2956d2ff58918d49f66d4
