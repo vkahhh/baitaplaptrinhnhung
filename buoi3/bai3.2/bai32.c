@@ -14,42 +14,33 @@
 #include <sys/sysmacros.h>
 
 clock_t start, stop;
-int flag_1, flag_2, fd;
-
+int fd;
 void ghifile ()
 {
-	int n;
-	int a[1000000];
+	int fd1, fd2;
+	int n = 1000000;
+	int i;
+	char str1[500000], str2[500000];
+	//file A:
+	fd1 = open ("fileA.txt", O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
+	for (i = 1; i <= 500000; i ++) {
 
+		snprintf(str1, 30 , "%d\n", i);
+		write(fd1, str1, strlen(str1));
 
-	for (int i = 1; i <= 1000000; i++)
-	{	
-
-		if (i <= 500000)
-		{ 
-
-		    fd = open ("fileA.txt", O_RDWR | O_CREAT, 0777);
-			write (fd, &a[i], sizeof(a[i])); //day nay
-			read (fd, &a[i], sizeof(a[i]));
-
-		}
-
-		if (500000 < i && i <= 1000000)
-		{
-			fd = open ("fileB.txt", O_RDWR | O_CREAT, 0777);
-			write (fd, &a[i], sizeof(a[i]));
-			read(fd, &a[i], sizeof(a[i])); //day nay
-
-		}
     }
+	close (fd1);
+	fd2 = open ("fileB.txt", O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
+	for (i = 500000; i <= n; i ++) {
 
-	if (fd == -1)
-	   {
-	      printf ("Error!");   
-	      exit (1);             
-	   }
+		snprintf(str2, 20 , "%d\n", i);
+		write(fd2, str2, strlen(str2));
 
-    close (fd);
+    }
+	close (fd2);
+
+
+
 
 }
 int main ()
