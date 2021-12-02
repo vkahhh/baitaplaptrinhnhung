@@ -25,15 +25,17 @@ void ghifile ()
 	fd1 = open ("fileA.txt", O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
 	for (i = 1; i <= 500000; i ++) {
 
-		snprintf(str1, 30 , "%d\n", i);
+		snprintf(str1, 500000 , "%d\n", i);
 		write(fd1, str1, strlen(str1));
 
     }
 	close (fd1);
+	//file B
+	
 	fd2 = open ("fileB.txt", O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
 	for (i = 500000; i <= n; i ++) {
 
-		snprintf(str2, 20 , "%d\n", i);
+		snprintf(str2, 500000 , "%d\n", i);
 		write(fd2, str2, strlen(str2));
 
     }
