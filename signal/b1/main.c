@@ -6,6 +6,7 @@ static void signal_handler1(int signo) {
     
     if (signo == SIGINT) {
         printf("OK.\n");
+        exit(EXIT_SUCCESS);
   }
 }
 
