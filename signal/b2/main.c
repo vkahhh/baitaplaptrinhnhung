@@ -25,7 +25,10 @@ int main(void) {
     sigaddset( &new_set, SIGINT );
     sigprocmask( SIG_BLOCK, &new_set, &old_set);
     sigprocmask( SIG_SETMASK, &old_set, NULL );
+<<<<<<< HEAD
     //sigismember(&new_set, SIGINT);
+=======
+>>>>>>> cda2f23054c9f0bfde543a2ed0139f0f81bea500
     if (sigismember (&new_set, SIGINT) == 1) { //đang bị block
         sigprocmask( SIG_UNBLOCK, &new_set, &old_set);
     } else {
